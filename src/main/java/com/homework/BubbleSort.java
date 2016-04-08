@@ -1,8 +1,8 @@
-package com.zh;
+package main.java.com.homework.sort;
 
 import java.util.Random;
 
-public class SortedMaoPao {
+public class BubbleSort {
 	
 	public static int temp = 0;
 	

@@ -4,6 +4,7 @@ import java.util.Random;
 
 public class BubbleSort {
 	
+	// 这有何用?
 	public static int temp = 0;
 	
 	public static void main(String[] args){

@@ -9,5 +9,5 @@
 本地安装mysql，学会建表，增删改查，学懂inner join, outer join
 
 ### 2016-04-13
-学会java连mysql，实现冒泡排序增删改查
+学会java连mysql，实现增删改查
 

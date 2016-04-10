@@ -9,19 +9,19 @@ public class BubbleSort {
 	
 	public static void main(String[] args){
 		Long s1 = System.currentTimeMillis();
-		int[] array = new int[1000000];			
+		int[] array = new int[1000];			
 		System.out.println("开始产生随机数");
 		
-		for(int i = 0;i < 10000;i++){
+		for(int i = 0;i < 1000;i++){
 			array[i] = new Random().nextInt(10000000);
-			System.out.println("产生的随机数为："+array[i]+"，这是第"+i+"个随机数");
+			System.out.println("产生的随机数为："+array[i]+"，这是第"+(i+1)+"个随机数");
 		}
 		//int[] array = new int[]{10,100,12,90,44,36,89,90,20,33,5,1,0,34,};
 		System.out.println("结束产生随机数");
 
 		int[] arr = sortedMaoPao(array);
-		System.out.print("[");
-		int j = arr.length - 1;
+		System.out.println("[");
+//		int j = arr.length - 1;
 		for(int i = 0;i < arr.length/10;i++){
 			for(int m = 0;m < 10;m++){
 			System.out.print(arr[i*10+m]+",");

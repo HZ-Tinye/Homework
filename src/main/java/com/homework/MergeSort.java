@@ -14,7 +14,7 @@ public class MergeSort {
 			array[i] = new Random().nextInt(100000);
 		}
 		int j = array.length;
-		System.out.print("这是原始数组：");
+		System.out.println("这是原始数组：");
 		logger(array);
 		//分成两组排序
 //		for(int i = 0 ;i < array.length/2;i++){
@@ -28,7 +28,7 @@ public class MergeSort {
 //		System.out.print("这是排序后数组：");
 //		logger(array);
 		merge_sort(array,0,j-1);
-		System.out.print("这是最终数组：");
+		System.out.println("这是最终数组：");
 		logger(array);
 		Long s2 = System.currentTimeMillis();
 		Long s3 = s2 - s1;
@@ -104,15 +104,14 @@ public class MergeSort {
 		
 		return arr;
 	}
-	public static void logger(int[] array){
-		int j = array.length;
-		System.out.print("[");
-		for(int i = 0;i < array.length-1;i++){
-			for(int m = 0;m<20;m++){
-			System.out.print(array[i] + ",");
+	public static void logger(int[] arr){
+		System.out.println("[");
+		for(int i = 0;i < arr.length/10;i++){
+			for(int m = 0;m < 10;m++){
+			System.out.print(arr[i*10+m]+",");
 			}
 			System.out.println("");
 		}
-		System.out.println(array[j-1]+"]");
-	}
+		System.out.println("]");
+}
 }

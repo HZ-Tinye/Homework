@@ -29,6 +29,7 @@ public class GetMax {
 					continue;
 				}
 			}
+			// 这里i循环的过程中没判断k, list会一直add多于k个数，可以在while里加入对list大小和k的判断
 			while(i>=0){
 				list.add(arr3[i--]);
 			}

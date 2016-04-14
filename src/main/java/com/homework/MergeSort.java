@@ -8,8 +8,9 @@ public class MergeSort {
 
 	public static void main(String[] args){
 		Long s1 = System.currentTimeMillis();
-		int[] array = new int[10000];
-		for(int i = 0 ;i<10000;i++){
+		int num = 10000;
+		int[] array = new int[num];
+		for(int i = 0 ;i<num;i++){
 //			int[] array = new int[]{10,9,8,7,6,5,4,3,2,1,0};
 			array[i] = new Random().nextInt(100000);
 		}

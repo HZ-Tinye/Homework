@@ -4,7 +4,6 @@ import java.util.Random;
 
 public class BubbleSort {
 	
-	// 这有何用?
 	public static int temp = 0;
 	
 	public static void main(String[] args){
@@ -38,7 +37,7 @@ public class BubbleSort {
 	}
 	
 	public static int[] sortedMaoPao(int[] array){
-		for(int i = 0;i < array.length;i++){
+		for(int i = 0;i < array.length-1;i++){
 			for(int j = 0;j < array.length - i -1;j++){
 				if(array[j] > array[j+1]){
 					temp = array[j];

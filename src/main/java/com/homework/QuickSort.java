@@ -7,7 +7,7 @@ public class QuickSort {
 	public static void main(String[] args){
 //		int[] array = new int[]{6,2,7,3,8,9};
 		Long s1 = System.currentTimeMillis();
-		int num = 20;
+		int num = 10000;
 		int[] array = new int[num];
 		for(int i = 0;i < num;i++){
 			array[i] = new Random().nextInt(100000);
@@ -16,7 +16,8 @@ public class QuickSort {
 		logger(array);
 //		sort(array,0,5);
 //		logger(array);
-		quickSort(array,0,num-1);
+//		quickSort(array,0,num-1);
+		sort(array,0,num-1);
 		System.out.println("程序排序的数组：");
 		logger(array);
 		Long s2 = System.currentTimeMillis();
@@ -26,40 +27,67 @@ public class QuickSort {
 		System.out.println("程序总共花费时间(ms)："+s3);
 
 	}
-	public static int[] quickSort(int[] arr,int p,int r){
-		int q = 0;
-		if(p < r){
-		q = sort(arr,p,r);
-		quickSort(arr,0,q-1);
-		quickSort(arr,q+1,r);
+//	public static int[] quickSort(int[] arr,int p,int r){
+//		int q = 0;
+//		if(p < r){
+//		q = sort(arr,p,r);
+//		quickSort(arr,0,q-1);
+//		quickSort(arr,q+1,r);
+//		}
+//		
+//		return arr;
+//	}
+	public static int[] sort(int[] arr,int low , int high){
+		int l = low;
+		int h = high;
+		int povit = arr[low];
+		while(l<h)
+		{
+			while(l<h&&arr[h]>=povit)
+				h--;
+			if(l<h){
+				int temp = arr[h];
+				arr[h] = arr[l];
+				arr[l] = temp;
+				l++;
+			}
+			
+			while(l<h&&arr[1]<=povit)
+				l++;
+			if(l<h){
+				int temp = arr[h];
+				arr[h] = arr[l];
+				arr[l] = temp;
+				h--;
+			}
 		}
-		
-		return arr;
-	}
-	public static int sort(int[] arr,int p , int r){
-		int temp = 0 ;
-		int i = p,j = r;
-		while(i!=j){
-			for(;j>i;j--){
-			if( arr[i] > arr[j]){
-				temp = arr[j];
-				arr[j] = arr[i];
-				arr[i] = temp;
-				break;
-			}
-			}
-			for(;i<j;i++){
-			if(arr[j] < arr[i]){
-				temp = arr[i];
-				arr[i] = arr[j];
-				arr[j] = temp;
-				break;
-			}
-			}
+			if(l>low) 
+				sort(arr,low,l-1);
+			if(h<high)
+				sort(arr,l+1,high);
+			return arr;
 		}
+//		while(i<j){
+//			for(;j>i;j--){
+//			if( arr[i] > arr[j]){
+//				temp = arr[j];
+//				arr[j] = arr[i];
+//				arr[i] = temp;
+//				break;
+//			}
+//			}
+//			for(;i<j;i++){
+//			if(arr[j] < arr[i]){
+//				temp = arr[i];
+//				arr[i] = arr[j];
+//				arr[j] = temp;
+//				break;
+//			}
+//			}
+//		}
 //		System.out.println("i = "+i);
-		return i;
-	}
+//		return i;
+//	}
 	
 	public static void logger(int[] arr){
 		System.out.println("[");

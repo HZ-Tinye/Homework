@@ -1,30 +1,22 @@
-package main.java.com.homework.sort;
+package com.java.sort;
 
-import java.util.Random;
+import com.java.util.Logger;
 
 public class HeapSort {
 
-	public static void main(String[] args) {
+	public static void heap(int[] array) {
 		Long s1 = System.currentTimeMillis();
-		// TODO Auto-generated method stub
-//		int[] array = new int[]{10,15,56,25,30,70};
-		int num = 10000;
-		int[] array = new int[num];
-		for(int i = 0 ;i < num;i++){
-			array[i] = new Random().nextInt(100000);
-		}
-		System.out.println("这是原始数组：");
-		logger(array);
-//		heapSort(array,num);
+//		Logger.logger(array);
+		
 		buildMaxHeapify(array);
 		heapSort(array);
-		System.out.println("这是最终数组：");
-		logger(array);
+		
+//		Logger.logger(array);
 		Long s2 = System.currentTimeMillis();
 		Long s3 = s2 - s1;
-		System.out.println("程序开始时刻："+s1);
-		System.out.println("程序结束时刻："+s2);
-		System.out.println("程序用时："+s3);
+		System.out.println("程序HeapSort开始时刻："+s1);
+		System.out.println("程序HeapSort结束时刻："+s2);
+		System.out.println("程序HeapSort总共花费时间(ms)："+s3);
 
 		
 	}
@@ -140,14 +132,4 @@ public class HeapSort {
 //		return arr;
 //	}
 	
-	public static void logger(int[] arr){
-		System.out.println("[");
-		for(int i = 0;i < arr.length/10;i++){
-			for(int m = 0;m < 10;m++){
-			System.out.print(arr[i*10+m]+",");
-			}
-			System.out.println("");
-		}
-		System.out.println("]");
-}
 }

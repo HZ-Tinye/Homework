@@ -1,23 +1,23 @@
-package main.java.com.homework.sort;
+package main.java.com.homework;
 
 import java.util.Random;
 
 public class QuickSort {
 		
 	public static void main(String[] args){
-//		int[] array = new int[]{6,2,7,3,8,9};
+		int[] array = new int[]{6,2,7,3,8,9};
 		Long s1 = System.currentTimeMillis();
 		int num = 10000;
-		int[] array = new int[num];
-		for(int i = 0;i < num;i++){
-			array[i] = new Random().nextInt(100000);
-		}
-		System.out.println("程序生成的数组：");
+//		int[] array = new int[num];
+//		for(int i = 0;i < num;i++){
+//			array[i] = new Random().nextInt(100000);
+//		}
+		System.out.println("程序生成的数组：" + array);
 		logger(array);
 //		sort(array,0,5);
 //		logger(array);
 //		quickSort(array,0,num-1);
-		sort(array,0,num-1);
+		sort(array,0,5);
 		System.out.println("程序排序的数组：");
 		logger(array);
 		Long s2 = System.currentTimeMillis();
@@ -60,6 +60,7 @@ public class QuickSort {
 				arr[l] = temp;
 				h--;
 			}
+			logger(arr);
 		}
 			if(l>low) 
 				sort(arr,low,l-1);
